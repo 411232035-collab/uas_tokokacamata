@@ -34,6 +34,37 @@
     }
 @endphp
 
+<style>
+    .insight-card {
+        background: rgba(255,255,255,.055);
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 12px;
+        min-height: 156px;
+    }
+
+    .insight-card__label {
+        color: #f7f9ff;
+        font-size: .82rem;
+        font-weight: 700;
+        line-height: 1.25;
+    }
+
+    .insight-card__value {
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .insight-card__description {
+        color: #edf2ff;
+        font-size: .88rem;
+        line-height: 1.55;
+        margin-bottom: 0;
+    }
+</style>
+
 <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
         <h4 class="mb-1">Welcome, {{ $displayName }}</h4>
@@ -86,13 +117,13 @@
             <div class="row g-3">
                 @foreach($systemInsights as $insight)
                     <div class="col-md-6 col-xl-3">
-                        <div class="p-3 rounded-3 h-100" style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);">
+                        <div class="insight-card p-3 h-100">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="small text-muted">{{ $insight['label'] }}</span>
+                                <span class="insight-card__label">{{ $insight['label'] }}</span>
                                 <i class="fas {{ $insight['icon'] }} {{ $insight['color'] }}"></i>
                             </div>
-                            <div class="fw-bold mb-2">{{ $insight['value'] }}</div>
-                            <p class="text-muted small mb-0">{{ $insight['description'] }}</p>
+                            <div class="insight-card__value mb-2">{{ $insight['value'] }}</div>
+                            <p class="insight-card__description">{{ $insight['description'] }}</p>
                         </div>
                     </div>
                 @endforeach

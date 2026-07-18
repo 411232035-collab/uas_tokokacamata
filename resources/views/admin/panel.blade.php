@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
         <h4 class="mb-1">Admin Panel</h4>
-        <small class="text-muted">Pusat kontrol untuk data utama dan laporan toko.</small>
+        <small class="text">Pusat kontrol untuk data utama dan laporan toko.</small>
     </div>
     <span class="badge bg-danger p-2">Admin</span>
 </div>
